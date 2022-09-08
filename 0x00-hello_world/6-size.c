@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
-* main - entry point
-*
-* Return - always 0 (Success)
-*/
+ * main - entrypoint
+ *
+ * Return - always 0 (Success)
+ */
 int main(void)
 {
 	printf("Size of a char: %d byte(s)\n", sizeof(char));
