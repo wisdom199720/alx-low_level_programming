@@ -1,42 +1,35 @@
 #include <stdio.h>
+
 /**
- * main - print a num pair from 00-99 but no repeats (00 01, 00 02, 00 03,...)
+ * main - Writes combinations of 00-99
  *
- * Return: Always 0 (Success)
+ * Return: 0 for success
  */
 
 int main(void)
 {
-	int ten;
-	int unit;
-	int te;
-	int un;
+	int i, j;
 
-	for (ten = '0'; ten <= '9'; ten++)
+	for (i = 0; i <= 99; i++)
 	{
-		for (unit = '0'; unit <= '9'; unit++)
+		for (j = 0; j <= 99; j++)
 		{
-			for (te = ten + 1; te <= '9'; te++)
+			if (i < j)
 			{
-				for (un = unit + 1; un <= '9'; un++)
-				{
-					putchar(ten);
-					putchar(unit);
-					putchar(' ');
-					putchar(te);
-					putchar(un);
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
+				putchar(' ');
+				putchar((j / 10) + '0');
+				putchar((j % 10) + '0');
 
-					if (!((ten == '9' && unit == '8') && (te == '9' && un == '9')))
-					{
-						putchar(',');
-						putchar(' ');
-					}
+				if (i != 98 || j != 99)
+				{
+					putchar(',');
+					putchar(' ');
 				}
-				un = '0';
 			}
 		}
 	}
 	putchar('\n');
-
 	return (0);
 }
