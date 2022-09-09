@@ -1,23 +1,22 @@
 #include <stdio.h>
 
 /**
- * main - using putchar to print numbers
+ * main - print alphabets in reverse
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
+	char n = 'z';
 
-	int n = 0;
-
-	while (n < 10)
+	while (n >= 'a')
 	{
 		putchar(n);
-		n++;
+		n--;
 	}
 
 	putchar('\n');
 
-	return(0);
+	return (0);
 }
