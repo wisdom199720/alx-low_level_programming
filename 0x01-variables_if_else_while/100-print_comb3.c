@@ -10,14 +10,14 @@ int main(void)
 	int tenth;
 	int unit;
 
-	for (tenth = '0'; tenth <='9'; tenth++)/*print tens place*/
+	for (tenth = '0'; tenth <= '9'; tenth++)/*print tens place*/
 	{
-		for (unit = '0'; unit <='9'; unit++)/*print units place*/
+		for (unit = (tenth + 1); unit <= '9'; unit++)/*print units place*/
 		{
 			putchar(tenth);
 			putchar(unit);
 
-			if (!(unit == '9') && (tenth == '9'))
+			if (tenth != '8' || unit != '9')
 			{	
 				putchar(',');
 				putchar(' ');
