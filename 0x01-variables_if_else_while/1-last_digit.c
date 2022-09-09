@@ -25,11 +25,11 @@ int main(void)
 	}
 	else if ((n % 10) > 5)
 	{
-		print("greater than 5\n");
+		printf("greater than 5\n");
 	}
 	else
 	{
-		print("less than 6 and not 0\n");
+		printf("less than 6 and not 0\n");
 	}
 
 	return (0);
