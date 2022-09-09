@@ -16,7 +16,7 @@ int main(void)
 	{
 		for (unit = '0'; unit <= '9'; unit++)
 		{
-			for (te = ten; te <= '9'; te++)
+			for (te = ten + 1; te <= '9'; te++)
 			{
 				for (un = unit + 1; un <= '9'; un++)
 				{
@@ -38,5 +38,5 @@ int main(void)
 	}
 	putchar('\n');
 
-	return(0);
+	return (0);
 }
