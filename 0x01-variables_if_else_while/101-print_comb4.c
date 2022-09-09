@@ -13,9 +13,9 @@ int main(void)
 
 	for (hund = '0'; hund <= '9'; hund++)
 	{
-		for ( ten = (hund + 1); ten <= '9'; ten++)
+		for (ten = (hund + 1); ten <= '9'; ten++)
 		{
-			for ( unit = (ten + 1); unit <= '9'; unit++)
+			for (unit = (ten + 1); unit <= '9'; unit++)
 			{
 				putchar(hund);
 				putchar(ten);

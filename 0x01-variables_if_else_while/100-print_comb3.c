@@ -18,7 +18,7 @@ int main(void)
 			putchar(unit);
 
 			if (tenth != '8' || unit != '9')
-			{	
+			{
 				putchar(',');
 				putchar(' ');
 			}
