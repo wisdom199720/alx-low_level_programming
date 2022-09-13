@@ -6,48 +6,38 @@
 
 int main(void)
 {
-	int count;
-	unsigned long x, y, z, a, b, c, carry;
+	int counter, overflow;
+	unsigned long a = 1;
+	unsigned long b = 1;
+	unsigned long sum = 0;
+	long a_head, a_tail, b_head, b_tail, sum_head, sum_tail;
 
-	x = 0;
-	y = 1;
-
-	for (count = 1; count <= 90; count++)
+	printf("1");
+	for (counter = 2; counter < 93; counter++) /* will still print */
 	{
-		z = x + y;
-		x = y;
-		y = z;
-	}
-
-	a = x % 1000;
-	x = x / 1000;
-	b = y % 1000;
-	y = y / 1000;
-
-	while (count <= 98)
-	{
-		carry = (a + b) / 1000;
-		c = (a + b) - carry * 1000;
-		z = (x + y) + carry;
-		x = y;
-		y = z;
+		sum = a + b;
 		a = b;
-		b = c;
-
-		if (c >= 100)
-		{
-			printf("%lu%lu", z, c);
-		}
-		else
-		{
-			printf("%lu0%lu", z, c);
-		}
-		if (count < 98)
-		{
-			printf(", ");
-		}
-		count++;
+		b = sum;
+		printf(", %lu", sum);
 	}
-	putchar('\n');
+	a_head = a / 1000000000; /* break larger num into 2 parts */
+	a_tail = a % 1000000000;
+	b_head = b / 1000000000;
+	b_tail = b % 1000000000;
+
+	for (; counter < 99; counter++)
+	{
+		overflow = (a_tail + b_tail) / 1000000000;
+		sum_tail = (a_tail + b_tail) - (1000000000 * overflow);
+		sum_head = (a_head + b_head) + overflow;
+		
+		printf(", %lu%lu", sum_head, sum_tail);
+
+		a_head = b_head;
+		a_tail = b_tail;
+		b_head = sum_head;
+		b_tail = sum_tail;
+	}
+	printf("\n");
 	return (0);
 }
