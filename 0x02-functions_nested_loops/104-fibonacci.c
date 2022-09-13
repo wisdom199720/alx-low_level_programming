@@ -40,7 +40,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%lu0%lu", z, c)
+			printf("%lu0%lu", z, c);
 		}
 		if (count < 98)
 		{
@@ -50,4 +50,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-}
+i
