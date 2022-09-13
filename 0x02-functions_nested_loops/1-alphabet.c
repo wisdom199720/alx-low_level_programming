@@ -2,12 +2,12 @@
 
 
 /**
- * main - entry point
+ * print_alphabet - prints lowercase alphabet
  *
  * Return: Always return 0 (success)
  */
 
-int main(void)
+void print_alphabet(void)
 {
 
 	char alpha;

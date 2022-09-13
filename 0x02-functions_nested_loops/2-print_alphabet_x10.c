@@ -2,7 +2,7 @@
 
 /**
  * main - print 'abcdefghijk-z' x 10
- *
+ * @c: the character to check
  * Return: Always 0 (Success)
  */
 
