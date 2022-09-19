@@ -1,36 +1,26 @@
 #include "main.h"
 
 /**
- * _stlern - returns the length of string
- * @s: string
- * Return: length
- */
-
-int _stlern(char *s)
-{
-	int len = 0;
-
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-
-	return (len);
-}
-
-/**
  * puts2 - puts evers second character of a string
- * @str: string to print
+ * @str: string
+ * Return: nothing
  */
-
 void puts2(char *str)
 {
-	int i;
+	int i, j;
 
-	for (i = 0; str[1] != '\0' && i < _strlen(str); i += 2)
+	i = 0;
+	j = 0;
+
+	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		i++;
+	}
+
+	while (j < i)
+	{
+		_putchar(str[j]);
+		j += 2;
 	}
 	_putchar('\n');
 }
