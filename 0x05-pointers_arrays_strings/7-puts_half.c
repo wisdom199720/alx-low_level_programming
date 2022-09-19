@@ -13,7 +13,7 @@ int _strlen(char *s)
 	while (*s != '\0')
 	{
 		len++;
-		s++
+		s++;
 	}
 
 	return (len);
@@ -31,9 +31,13 @@ void puts_half(char *str)
 
 	/* find the index to start depending on even/odd amount of strlen */
 	if (len % 2 != 0)
+	{
 		i = (len / 2) + 1;
+	}
 	else
-		i = (len / 2));
+	{
+		i = (len / 2);
+	}
 
 	while (i < len)
 	{
