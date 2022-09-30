@@ -9,31 +9,34 @@
 
 int main(int argc, char *argv[])
 {
-	int a, n = 0, i, t;
-	int c[5] = {25, 10, 5, 2, 1};
+	int n, coins = 0;
 
+	/* validate input */
 	if (argc != 2)
 	{
-		puts("Error");
+		printf("Error\n");
 		return (1);
 	}
-	a = atoi(argv[1]);
-	if (a <= 0)
+
+	if (argv[1][0] == '-')
 	{
-		puts("0");
-		return (1);
+		printf("0\n");
+		return (0);
 	}
-	else
-	{
-		for (i = 0; i < 5; i++)
-		{
-			t = a / c[i];
-			a -= t * c[i];
-			n += t;
-			if (a == 0)
-				break;
-		}
-	}
-	printf("%d\n", n);
+
+	/* convert string to int and calculate coins */
+	n = atoi(argv[1]);
+
+	coins += n / 25;
+	n = n % 25;
+	coins += n / 10;
+	n = n % 10;
+	coins += n / 5;
+	n = n % 5;
+	coins += n / 2;
+	n = n % 2;
+	coins += n / 1;
+
+	printf("%d\n", coins);
 	return (0);
 }
