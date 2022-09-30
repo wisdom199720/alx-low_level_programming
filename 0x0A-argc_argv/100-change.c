@@ -9,39 +9,31 @@
 
 int main(int argc, char *argv[])
 {
-	/*Declaring variables*/
-	int position, total, change, aux;
-	int coins[] = {25, 10, 5, 2, 1}; /*Array int*/
-
-	position = total = change = aux = 0;
+	int a, n = 0, i, t;
+	int c[5] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
-		printf("Error\n");
+		puts("Error");
 		return (1);
 	}
-
-	total = atoi(argv[1]); /*Covert str to int*/
-
-	if (total <= 0)
+	a = atoi(argv[1]);
+	if (a <= 0)
 	{
-		printf("0\n");
-		return (0);
+		puts("0");
+		return (1);
 	}
-
-	/*Declaring While*/
-	while (coins[position] != '\0')
+	else
 	{
-		if (total >= coins[position])
+		for (i = 0; i < 5; i++)
 		{
-			aux = (total / coins[position]);
-			change += aux;
-			total -= coins[position] * aux;
+			t = a / c[i];
+			a -= t * c[i];
+			n += t;
+			if (a == 0)
+				break;
 		}
-
-		position++;
 	}
-	printf("%d\n", change);
-
-
+	printf("%d\n", n);
+	return (0);
 }
