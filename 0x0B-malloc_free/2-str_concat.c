@@ -2,9 +2,10 @@
 #include <stdlib.h>
 
 /**
- * *str_concat - concatenates two strings
+ * str_concat - concatenates two strings
  * @s1: first string
  * @s2: second string
+ * Return: pointer to newly allocated space in memory, or NULL if error
  */
 char *str_concat(char *s1, char *s2)
 {
